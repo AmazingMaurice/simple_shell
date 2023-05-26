@@ -17,7 +17,7 @@ int check_build_in_func(char *cmd, char *envp[])
 	char *builtin_commands[] = {"cd", "exit", "env"};
 int num_builtins = sizeof(builtin_commands) / sizeof(builtin_commands[0]);
 	int MMi;
-
+	(void)envp;
 	/* Iterate through the built-in commands */
 	for (MMi = 0; MMi < num_builtins; MMi++)
 	{
@@ -36,7 +36,7 @@ int num_builtins = sizeof(builtin_commands) / sizeof(builtin_commands[0]);
 					return (2);
 
 				case 3:
-					my_env(envp);
+					my_env();
 					return (1);
 
 				default:

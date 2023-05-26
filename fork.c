@@ -12,18 +12,18 @@
  * to complete.
  */
 
-void fork_execute_function(char **array_string, char *env[])
+pid_t void fork_execute_function(char **array_string, char *env[])
 {
 pid_t MMchild_pid;
-int MMwait_status;
+int MMwait_status = 0;
 
 MMchild_pid = fork();
 if (MMchild_pid < 0)
 {
 perror("Error: Fork failed");
-return;
+return (-1);
 }
-if (MMchild_pid == 0)
+else if (MMchild_pid == 0)
 {
 if (execve(array_string[0], array_string, env) == -1)
 {
@@ -37,5 +37,7 @@ if (wait(&MMwait_status) == -1)
 {
 perror("Error: Wait failed");
 }
+return (WEXISTSTATUS(waiting_sstatus));
 }
+return (-1);
 }

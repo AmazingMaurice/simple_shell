@@ -28,7 +28,7 @@ return (1);
 }
 create_pipes(MMpipefd, MMnum_commands);
 
-execute_commands(MMcommands, pipefd, MMnum_commands, envp);
+execute_commands(MMcommands, MMpipefd, MMnum_commands, envp);
 
 close_pipes(MMpipefd, MMnum_commands);
 

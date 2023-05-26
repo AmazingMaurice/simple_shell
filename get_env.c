@@ -1,4 +1,6 @@
 #include "shell.h"
+
+
 /**
  * my_env - Print the environmental variables of the shell
  * @envp: Array of environmental variables
@@ -9,7 +11,7 @@
  * used in the shell. It iterates through the envp array and prints
  * each variable on a new line. The function returns 1.
  */
-
+extern char **environ;
 int my_env(char *envp[])
 {
 int MMcounter = 0;
