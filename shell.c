@@ -20,7 +20,7 @@ int main(int argc, char *argv[], char **envp)
 
 		while (1)
 		{
-			printf(";) ");
+			printf("$ ");
 			MMline_input = NULL;
 			MMchar_read = read_input(&MMline_input, &MMsize_input);
 
