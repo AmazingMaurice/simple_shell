@@ -2,21 +2,21 @@
 
 /**
  * execute_commands - Execute a
- * series of commands using pipes
- * @commands: An array of commands to be executed
- * @num_commands: The number of commands in the array
- * @pipefd: An array of pipe file descriptors
- * for inter-process communication
- * @envp: An array of strings containing the environment variables
+ * series of command using pipes......
+ * @commands: An array of commands to be executed....
+ * @num_commands: The number of commands in the array...
+ * @pipefd: An array of pipe file descriptors...
+ * for inter-process communication..
+ * @envp: An array of strings containing the environment variables..
  *
- * This function forks multiple child processes to
- * execute a series of commands
+ * This function forks multiple child processes to.
+ * execute a series of commands..
  * using pipes for inter-process communication.
  * Each command is executed in a
  * separate child process. The input and output of
- * each command is redirected
+ * each command is redirected.
  * using the pipe file descriptors. The function
- * waits for all child processes
+ * waits for all child processes.
  * to complete before returning.
  */
 

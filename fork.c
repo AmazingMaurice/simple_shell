@@ -1,10 +1,11 @@
 #include "shell.h"
 
 /**
- * fork_execute_function - Execute the program in a child process
+ * fork_execute_function - Execute the program in a child process.
  * @array_string: Array of tokens
  * @env: Parent environmental variables
  *
+ * Return:0
  * This function forks a new process and executes the program specified by the
  * first token in the array_string. The child process uses execve to replace
  * its image with the specified program. If the program execution fails, an

@@ -1,8 +1,10 @@
 #include "shell.h"
 
 /**
- * executeCommand - Executes a command using execvp
+ * ExecuteCmd - Executes a command using execvp.
  * @cmd: The command to execute
+ *
+ *  Return: 0
  */
 void ExecuteCmd(char *cmd)
 {
