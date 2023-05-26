@@ -26,7 +26,7 @@ void handle_error(const char *message);
 void my_exit(char **argument);
 void wait_for_children(int num_commands);
 int my_strlen(char *str);
-
+extern char **environ;
 int sum(int a, int b);
 
 void ExecuteCmd(char *cmd);
