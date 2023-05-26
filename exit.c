@@ -15,7 +15,7 @@ void my_exit(char **argument)
 
 	if (argument[1] != NULL)
 	{
-		MM_stat = my_atoi(argument[1]);
+		MM_stat = atoi(argument[1]);
 	}
 
 	for (a = 0; argument[a] != NULL; a++)

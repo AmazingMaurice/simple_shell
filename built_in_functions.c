@@ -1,5 +1,5 @@
 #include "shell.h"
-int my_env(char *envp[]);
+int my_env(void);
 
 /**
  * check_build_in_func - Determines if the given

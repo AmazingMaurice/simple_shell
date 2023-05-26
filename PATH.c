@@ -1,4 +1,4 @@
-#incldue "shell.h"
+#include "shell.h"
 
 /**
  * path_check_function - Check if a command exists in the path

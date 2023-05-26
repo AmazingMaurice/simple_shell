@@ -12,7 +12,7 @@
  * to complete.
  */
 
-pid_t void fork_execute_function(char **array_string, char *env[])
+pid_t fork_execute_function(char **array_string, char *env[])
 {
 pid_t MMchild_pid;
 int MMwait_status = 0;
@@ -37,7 +37,7 @@ if (wait(&MMwait_status) == -1)
 {
 perror("Error: Wait failed");
 }
-return (WEXISTSTATUS(waiting_sstatus));
+return (WEXITSTATUS(MMwait_status));
 }
 return (-1);
 }

@@ -22,8 +22,8 @@ int my_atoi(char *my_string)
 
 			MMpos_neg *= -1;
 		/* Check if the character is a digit */
-		else if (my_string[z] >= '0' && my_string[MMz] <= '9')
-			MMcont = (MMcont * 10) + (my_string[z] - '0');
+		else if (my_string[MMz] >= '0' && my_string[MMz] <= '9')
+			MMcont = (MMcont * 10) + (my_string[MMz] - '0');
 		/* Break the loop if the character is neither a minus sign nor a digit */
 		else
 			break;

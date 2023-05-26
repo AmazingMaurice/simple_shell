@@ -1,5 +1,6 @@
 #ifndef SHELL_H
 #define SHELL_H
+#include <stddef.h>
 #include <stdio.h>
 #include <unistd.h>
 #include <stdlib.h>
@@ -12,18 +13,31 @@
 #include <sys/stat.h>
 #include <limits.h>
 
+void execute_commands(char *commands[], int num_commands,
+		int pipefd[][2], char *envp[]);
 char **string_tokenization(char *str);
-
+void create_pipes(int pipefd[][2], int num_commands);
+void close_unused_pipes(int pipefd[][2], int num_commands);
+void close_pipes(int pipefd[][2], int num_commands);
 int my_strcmp(const char *string1, const char *string2);
-
+int executeSystemCustom(char *cmd, int inputFd);
 char *my_dubler(char *str);
-
+void handle_error(const char *message);
+void my_exit(char **argument);
+void wait_for_children(int num_commands);
 int my_strlen(char *str);
 
 int sum(int a, int b);
 
+void ExecuteCmd(char *cmd);
 
-void fork_execute_function(char **array_string, char *env[]);
+pid_t createChildProcess(int *inputFd);
+
+int waitForChildProcess(pid_t childPid);
+
+void handleNonTerminalInput(void);
+
+pid_t fork_execute_function(char **array_string, char *env[]);
 
 int handle_command(char *command, char *envp[]);
 
@@ -69,7 +83,7 @@ int my_strcmp(const char *string1, const char *string2);
 #ifndef SHELL_H
 #define SELL_H
 
-int my_env(char *envp[]);
+int my_env(void);
 
 #endif
 

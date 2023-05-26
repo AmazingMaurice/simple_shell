@@ -12,12 +12,12 @@
  * each variable on a new line. The function returns 1.
  */
 extern char **environ;
-int my_env(char *envp[])
+int my_env(void)
 {
 int MMcounter = 0;
-while (envp[MMcounter] != NULL)
+while (environ[MMcounter] != NULL)
 {
-printf("%s\n", envp[MMcounter]);
+printf("%s\n", environ[MMcounter]);
 MMcounter++;
 }
 
