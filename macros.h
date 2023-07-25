@@ -3,7 +3,7 @@
 
 
 /* prompt to be printed */
-#define PROMPT_MSG "Maury&Manal# " /* Needed to workwith signal */
+#define PROMPT_MSG "Maury&Manal# " /* Needed to work with signal */
 
 /* Resume from the unused attibute */
 #define UNUSED __attribute__((unused))
@@ -25,23 +25,23 @@
 
 #define HELP_EXIT_MSG "exit=\n"\
 "exit:\textit [STATUS]\n\n"\
-"      Exits of the simple-shell.\n\n"\
+"      Exit of the simple-shell.\n\n"\
 "      Exits the shell with a status of N. If N is omitted, the exit status\n"\
 "      is that of the last command executed.\n\n"
 
 
 
-#define HELP_ENV_MSG "env =\n"\
+#define HELP_ENV_MSG "env=\n"\
 "env:\tenv \n\n"\
 "	print enviroment.\n\n"\
 "	The env command will be print a complete list of enviroment variables.\n\n"
 
 
-#define HELP_SETENV_MSG "setenv = \n"\
-"setenv:\tsetenv : VARIABLE VALUE\n\n"\
+#define HELP_SETENV_MSG "setenv=\n"\
+"setenv:\tsetenv VARIABLE VALUE\n\n"\
 "      change or add an enviroment variable.\n\n"\
-"      initialize a new enviroment variable, or modify an existing one \n\n"\
-"      when there are not correct numbers of arguments print error message .\n\n"
+"      initialize a new enviroment variable, or modify an existing one\n"\
+"      when there are not correct numbers of arguments print error message.\n\n"
 
 
 #define  HELP_UNSETENV_MSG "unsetenv=\n"\
@@ -55,7 +55,7 @@
 "	Display brief summaries of built_inn commands.  IF BUILTIN_NAME is\n"\
 "	specified, gives detailed help on all commands matching BUILTIN_NAME,\n"\
 "	otherwise the list  of help topics is printed BUILTIN_NAME list.\n"\
-"	Arguments : \n\n"\
+"	Arguments:\n\n"\
 "	BUILTIN_NAME specifying a help topic.\n\n"\
 "	cd\t[dir]\n"\
 "	exit\t[status]\n"\
@@ -63,4 +63,6 @@
 "	setenv\t[variable value]\n"\
 "	unset\t[variable]\n"\
 "	help\t[built_name]\n\n"
+
+
 #endif
