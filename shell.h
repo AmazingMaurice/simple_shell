@@ -29,18 +29,17 @@
  * @env: copy of the environ
  * @alias_list: array of pointers with aliases.
  */
-typdef struct info
+typedef struct info
 {
-char *program_name;
-char *input_line;
-char *command_name;
-int exec_counter;
-int file_descriptor;
-char **tokens;
-char **env;
-char **alias_list;
-}
-ProgramData;
+	char *program_name;
+	char *input_line;
+	char *command_name;
+	int exec_counter;
+	int file_descriptor;
+	char **tokens;
+	char **env;
+	char **alias_list;
+} ProgramData;
 
 /**
 * struct BuiltinCommand - struct for the builtins
@@ -49,10 +48,9 @@ ProgramData;
 */
 typedef struct BuiltinCommand
 {
-char *built_inn;
-int (*function)(ProgramData *data);
-}
-BuiltinCommand;
+	char *built_inn;
+	int (*function)(ProgramData *data);
+} BuiltinCommand;
 
 
 

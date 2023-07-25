@@ -18,7 +18,7 @@ int display_alias(ProgramData *data, char *alias_name)
 for (i = 0; data->alias_list[i]; i++)
 	{
 if (!alias_name || (string_compare(data->alias_list[i], alias_name,
-				alias_length) && data->alias_list[i][alias_strength] == '='))
+				alias_length) && data->alias_list[i][alias_length] == '='))
 	{
 	for (j = 0; data->alias_list[i][j]; j++)
 	{
@@ -28,7 +28,7 @@ if (!alias_name || (string_compare(data->alias_list[i], alias_name,
 	}
 	buffer[j + 1] = '\0';
 	buffer_append(buffer, "'");
-	buffer_append(buffer, dataa->alias_list[i] + j + 1);
+	buffer_append(buffer, data->alias_list[i] + j + 1);
 	buffer_append(buffer, "'\n");
 	print_to_stdout(buffer);
 	}
@@ -103,7 +103,7 @@ int set_alias_value(char *alias_string, ProgramData *data)
 		if (temp)
 		{
 		buffer_append(buffer, "=");
-		buffer_append(bufffer, temp);
+		buffer_append(buffer, temp);
 		data->alias_list[j] = string_duplicate(buffer);
 		}
 		else

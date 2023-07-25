@@ -28,6 +28,17 @@ return (0);
 }
 
 /**
+ * handle_ctrl_c - print in the new line when the signal
+ * SIGINT (ctrl + c) is sent to the program.
+ * @UNUSED: option of the prototype
+ */
+void handle_ctrl_c(int signal UNUSED)
+{
+	print_to_stdout("\n");
+	print_to_stdout(PROMPT_MSG);
+}
+
+/**
  * initialize_data - initializes the struct with the info of the program
  * @data: pointer of the structure data
  * @argv: array of arguments passed to the program execution

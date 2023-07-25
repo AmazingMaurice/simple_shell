@@ -19,7 +19,7 @@ int show_environment(ProgramData *data)
 	char *var_copy = NULL;
 
 	if (data->tokens[1] == NULL)
-		print_environs_data(data);
+		print_environ_data(data);
 	else
 	{
 		for (i = 0; data->tokens[1][i]; i++)
@@ -27,14 +27,14 @@ int show_environment(ProgramData *data)
 			/*checks for a char '=' */
 			if (data->tokens[1][i] == '=')
 			{
-				var_copy = get_key_from(cpname, data);
+				var_copy = get_key_from_env(cpname, data);
 				if (var_copy != NULL)
 				set_key_in_env(cpname, data->tokens[1] + i + 1, data);
 			/*display env */
-				print_environs_data(data);
+				print_environ_data(data);
 				if (get_key_from_env(cpname, data) == NULL)
 				{
-				print_to_stdout(data->tokens[1];
+				print_to_stdout(data->tokens[1]);
 				print_to_stdout("\n");
 				}
 				else

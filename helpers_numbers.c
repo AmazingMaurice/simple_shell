@@ -75,8 +75,8 @@ return (number *sign);
  * Return: number of occurrences of character.
  */
 int count_characters(char *string, char *character)
-}
-int i = 0, counter = 0;
+{
+	int i = 0, counter = 0;
 
 for (; string[i]; i++)
 {

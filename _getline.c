@@ -14,8 +14,8 @@ int read_line(ProgramData *data)
 	ssize_t bytes_read;
 	ssize_t i = 0;
 
-	if (!commands_array[0] \\ (operators_array[0] == '&' && errno != 0)
-			|| (operators_array[0] == '|' && errono == 0))
+	if (!commands_array[0] || (operators_array[0] == '&' && errno != 0)
+			|| (operators_array[0] == '|' && errno == 0))
 	{
 		for (i = 0; commands_array[i]; i++)
 		{
@@ -28,8 +28,8 @@ int read_line(ProgramData *data)
 		i = 0;
 		do {
 		commands_array[i] = string_duplicate(custom_strtok(i ? NULL : buff, "\n;"));
-		i = check_logic_operators(command_array, i, operators_array);
-		} while (command_array[i++]);
+		i = check_logic_operators(commands_array, i, operators_array);
+		} while (commands_array[i++]);
 		}
 		data->input_line = commands_array[0];
 		for (i = 0; commands_array[i]; i++)
@@ -50,17 +50,16 @@ int read_line(ProgramData *data)
 int check_logic_operators(char *commands_array[], int i,
 		char operators_array[])
 {
-	char *temp  NULL;
+	char *temp = NULL;
 	int j;
 
 	for (j = 0; commands_array[i][j] == '&' && commands_array[i][j]; j++)
 	{
 		if (commands_array[i][j] == '&' && commands_array[i][j + 1] == '&')
 		{
-			/*split the line when chars '&&' are found */
 			temp = commands_array[i];
 			commands_array[i][j] = '\0';
-			commands_array[i] = stiring_duplicate(commands_array[i]);
+			commands_array[i] = string_duplicate(commands_array[i]);
 			commands_array[i + 1] = string_duplicate(temp + j + 2);
 			i++;
 			operators_array[i] = '&';
