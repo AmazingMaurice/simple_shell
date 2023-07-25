@@ -8,7 +8,7 @@
  * the functions returns the return value of the executed function, if no match
  * is found, the function returns -1.
  */
-int execute _builtins(ProgramData *data)
+int execute_builtins(ProgramData *data)
 {
 	int index;
 	BuiltinCommand opts[] = {

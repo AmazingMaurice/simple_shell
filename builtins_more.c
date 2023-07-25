@@ -123,15 +123,15 @@ int execute_help(ProgramData *data)
 	messages[5] = HELP_CD_MSG;
 	for (i = 0; messages[i]; i++)
 	{
-		length = string_length(data->tokens[1]);
-		if (string_compare(data->tokens[1], messages[i], length))
+		lenght = string_lenght(data->tokens[1]);
+		if (string_compare(data->tokens[1], messages[i], lenght))
 		{
-			print_to_stdout(messages[i] + length + 1);
+			print_to_stdout(messages[i] + lenght + 1);
 			return (1);
 		}
 	}
 	errno = EINVAL;
-	perror(data->commad_name);
+	perror(data->command_name);
 	return (0);
 }
 
