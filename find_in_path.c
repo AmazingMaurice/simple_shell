@@ -15,7 +15,7 @@ int f = 0, retCode = 0;
 char **array;
 
 if (!data->command_name)
-return (2)
+return (2);
 
 /* If it is a full_path or an executablein the same path */
 if (data->command_name[0] == '/' || data->command_name[0] == '.')
@@ -41,7 +41,7 @@ retCode = check_file(array[f]);
 if  (retCode == 0 || retCode == 126)
 { /* The file was not found, is not a directory and has execute permissions */
 errno = 0;
-free(data->[0];
+free(data->tokens[0]);
 data->tokens[0] = string_duplicate(array[f]);
 freeArrayOfPointers(array);
 return (retCode);

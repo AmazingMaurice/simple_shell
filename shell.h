@@ -153,13 +153,13 @@ int execute_alias(ProgramData *data);
 /*======== builtins_env.c ========*/
 
 /* Shows the enviroment where the shell runs */
-int  show_enviroment(ProgramData *data);
+int  show_environment(ProgramData *data);
 
 /* create or override a variable of enviroment */
-int set_enviroment_variable(ProgramData *data);
+int set_environment_variable(ProgramData *data);
 
 /* delete a variable of enviroment */
-int unset_enviroment_variable(ProgramData *data);
+int unset_environment_variable(ProgramData *data);
 
 /************** HELPERS FOR ENVIROMENT VARIABLES MANAGEMENT **************/
 
@@ -212,7 +212,7 @@ char *string_duplicate(char *string);
 int string_compare(char *string1, char *string2, int number);
 
 /* concatenates two strings */
-char *string_cocncat(char *string1, char *string2);
+char *string_concat(char *string1, char *string2);
 
 /* Reverse a string */
 void string_reverse(char *string);
@@ -243,6 +243,6 @@ char *get_alias_value(ProgramData *data, char *alias_name);
 int set_alias_value(char *alias_string, ProgramData *data);
 int check_file(char *path);
 void custom_tokenize(ProgramData *data);
-
+void freeAllData(ProgramData *data);
 
 #endif /* SHELL_H */

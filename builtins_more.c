@@ -101,7 +101,7 @@ int set_work_directory(ProgramData *data, char *new_dir)
  */
 int execute_help(ProgramData *data)
 {
-	int i, lenght = 0;
+	int i, length = 0;
 	char *messages[6] = {NULL};
 
 	messages[0] = HELP_MSG;
@@ -123,10 +123,10 @@ int execute_help(ProgramData *data)
 	messages[5] = HELP_CD_MSG;
 	for (i = 0; messages[i]; i++)
 	{
-		lenght = string_lenght(data->tokens[1]);
-		if (string_compare(data->tokens[1], messages[i], lenght))
+		length = string_length(data->tokens[1]);
+		if (string_compare(data->tokens[1], messages[i], length))
 		{
-			print_to_stdout(messages[i] + lenght + 1);
+			print_to_stdout(messages[i] + length + 1);
 			return (1);
 		}
 	}

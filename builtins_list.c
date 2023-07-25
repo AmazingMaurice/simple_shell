@@ -12,13 +12,13 @@ int execute_builtins(ProgramData *data)
 {
 	int index;
 	BuiltinCommand opts[] = {
-		{"exit", excute_exit},
+		{"exit", execute_exit},
 		{"help", execute_help},
 		{"cd", execute_cd},
-		{"alias", execute_alais},
+		{"alias", execute_alias},
 		{"env", show_environment},
-		{"setenv", set_environment_variable};
-		{"unsetenv", unset_environment_variable};
+		{"setenv", set_environment_variable},
+		{"unsetenv", unset_environment_variable},
 		{NULL, NULL}
 	};
 

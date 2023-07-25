@@ -13,7 +13,7 @@ char *get_key_from_env(char *key, ProgramData *data)
 
 	if (key == NULL || data->env == NULL)
 		return (NULL);
-	keyLength = string_lenght(key);
+	keyLength = string_length(key);
 	for (j = 0; data->env[j]; j++)
 	{
 		if (string_compare(key, data->env[j], keyLength) &&
@@ -41,7 +41,7 @@ int set_key_in_env(char *key, char *value, ProgramData *data)
 	if (key == NULL || value == NULL || data->env == NULL)
 		return (1);
 	keyLength = string_length(key);
-	for (j = 0; data->env[j]; j++;)
+	for (j = 0; data->env[j]; j++)
 	{
 		if (string_compare(key, data->env[j], keyLength)
 				&& data->env[j][keyLength] == '=')

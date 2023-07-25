@@ -41,14 +41,14 @@ if (error_code == 2 || error_code == 3)
 print_to_stderr(data->program_name);
 print_to_stderr(": ");
 print_to_stderr(v_as_string);
-print_to_stderr(": ";
+print_to_stderr(": ");
 print_to_stderr(data->tokens[0]);
 if (error_code == 2)
 print_to_stderr(": Illegal number: ");
 else
 print_to_stderr(":can't cd to ");
 print_to_stderr(data->tokens[1]);
-print_to_stderr("\n";
+print_to_stderr("\n");
 }
 else if (error_code == 127)
 {
@@ -68,5 +68,5 @@ print_to_stderr(": ");
 print_to_stderr(data->command_name);
 print_to_stderr(": permission denied\n");
 }
-returm(0);
+return (0);
 }

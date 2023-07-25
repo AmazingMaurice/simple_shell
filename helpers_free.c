@@ -25,7 +25,7 @@ data->tokens = NULL;
  * @data: struct of the program's data
  * Return: Nothing
  */
-void freeALLData(ProgramData *data)
+void freeAllData(ProgramData *data)
 {
 if (data->file_descriptor != 0)
 {

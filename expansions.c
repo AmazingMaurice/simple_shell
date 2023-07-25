@@ -8,15 +8,14 @@
 void expand_vars(ProgramData *data)
 {
 	int p, t;
-	char lane[BUFFER_SIZE] = {0}, expansions[BUFFER_SIZE] = {'\0'},
-	*temp;
+char lane[BUFFER_SIZE] = {0}, expansion[BUFFER_SIZE] = {'\0'}, *temp;
 
-	if (data->input_line == NULL)
-	return;
-	buffer_append(lane, data->input_line);
-	for (p = 0; lane[p]; p++)
-		if (lane[p] == '#')
-			lane[p--] = '\0';
+if (data->input_line == NULL)
+return;
+buffer_append(lane, data->input_line);
+for (p = 0; lane[p]; p++)
+if (lane[p] == '#')
+	lane[p--] = '\0';
 		else if (lane[p] == '$' && lane[p + 1] == '?')
 		{
 			lane[p] = '\0';
@@ -27,10 +26,10 @@ void expand_vars(ProgramData *data)
 		else if (lane[p] == '$' && lane[p + 1] == '$')
 		{
 			lane[p] = '\0';
-			long_to_string(getpid(), expansions, 10);
+			long_to_string(getpid(), expansion, 10);
 			buffer_append(lane, data->input_line + p + 2);
 		}
-		else if (lane[p] == '$' && lane[p + 1] == ' ' || lane[p + 1] == '\0')
+		else if (lane[p] == '$' && (lane[p + 1] == ' ' || lane[p + 1] == '\0'))
 			continue;
 		else if (lane[p] == '$')
 		{
@@ -77,7 +76,7 @@ void expand_alias(ProgramData *data)
 			buffer_append(lane, temp);
 			lane[string_length(lane)] = '\0';
 			buffer_append(lane, expansion);
-			vars_expanded = 1;
+			was_expanded = 1;
 		}
 		break;
 	}

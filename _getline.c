@@ -71,7 +71,8 @@ int check_logic_operators(char *commands_array[], int i,
 			/*split the line when chars '||' are found */
 			temp = commands_array[i];
 			commands_array[i][j] = '\0';
-			commands_array[i] = string_duplicate(temp = j + 2);
+			commands_array[i] = string_duplicate(commands_array[i]);
+			commands_array[i + 1] = string_duplicate(temp + j + 2);
 			i++;
 			operators_array[i] = '|';
 			free(temp);

@@ -20,6 +20,9 @@ for  (j = 0; delim[j] != '\0'; j++)
 if (*sub_string == delim[j])
 break;
 }
+if (delim[j] == '\0')
+break;
+}
 cloneString = sub_string;
 if (*cloneString == '\0')
 return (NULL);

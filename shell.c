@@ -108,7 +108,7 @@ if (string_len >= 1)
 {
 expand_alias(data);
 expand_vars(data);
-custom_tokeinize(data);
+custom_tokenize(data);
 if (data->tokens[0])
 {
 error_code = execute_command(data);
