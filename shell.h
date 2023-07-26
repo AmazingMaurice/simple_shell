@@ -51,9 +51,6 @@ typedef struct BuiltinCommand
 	char *built_inn;
 	int (*function)(ProgramData *data);
 } BuiltinCommand;
-
-
-
 /************* MAIN FUNCTIONS *************/
 
 
@@ -64,10 +61,6 @@ void initialize_data(ProgramData *data, int argc, char *argv[], char **env);
 
 /* Makes the infinite loop that shows the prompt*/
 void run_shell(char *prompt, ProgramData *data);
-
-/* print the prompt in a new line */
-void handle_ctrl_c(int opr UNUSED);
-void handle_ctrl_c(int signal UNUSED);
 
 /*====== _getline.c ========*/
 
@@ -146,19 +139,14 @@ int execute_help(ProgramData *data);
 /* set, unset and show alias */
 int execute_alias(ProgramData *data);
 
-/*======== builtins_env.c ========*/
-
-/* Shows the enviroment where the shell runs */
 int  show_environment(ProgramData *data);
-
+void handle_ctrl_c(int opr UNUSED);
+void handle_ctrl_c(int signal UNUSED);
 /* create or override a variable of enviroment */
 int set_environment_variable(ProgramData *data);
 
 /* delete a variable of enviroment */
 int unset_environment_variable(ProgramData *data);
-
-/************** HELPERS FOR ENVIROMENT VARIABLES MANAGEMENT **************/
-
 
 
 /*======== env_management.c ========*/
@@ -209,7 +197,7 @@ int string_compare(char *string1, char *string2, int number);
 
 /* concatenates two strings */
 char *string_concat(char *string1, char *string2);
-
+int display_alias(ProgramData *data, char *alias_name);
 /* Reverse a string */
 void string_reverse(char *string);
 
@@ -226,11 +214,6 @@ int _atoi(char *s);
 int count_characters(char *string, char *character);
 
 
-
-/*======== alias_management.c ========*/
-
-/*print the list of alias */
-int display_alias(ProgramData *data, char *alias_name);
 
 /* get the alias name */
 char *get_alias_value(ProgramData *data, char *alias_name);
