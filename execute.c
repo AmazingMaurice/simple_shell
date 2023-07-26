@@ -23,23 +23,23 @@ int execute_command(ProgramData *data)
 		pidd = fork();
 		if (pidd == -1)
 		{
-			perror(data->command_name);
-			exit(EXIT_FAILURE);
+		perror(data->command_name);
+		exit(EXIT_FAILURE);
 		}
-		if (pidd == 0)
+if (pidd == 0)
 		{
-			retval = execve(data->tokens[0], data->tokens,
-					data->env);
-			if (retval == -1)
-				perror(data->command_name), exit(EXIT_FAILURE);
+	retval = execve(data->tokens[0], data->tokens, data->env);
+
+	if (retval == -1)
+	perror(data->command_name), exit(EXIT_FAILURE);
 		}
 		else
 		{
-			wait(&status);
-			if (WIFEXITED(status))
-				errno = WEXITSTATUS(status);
-			else if (WIFSIGNALED(status))
-				errno = 128 + WTERMSIG(status);
+		wait(&status);
+		if (WIFEXITED(status))
+		errno = WEXITSTATUS(status);
+		else if (WIFSIGNALED(status))
+		errno = 128 + WTERMSIG(status);
 		}
 	}
 	return (0);

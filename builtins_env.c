@@ -55,7 +55,7 @@ int show_environment(ProgramData *data)
 }
 
 /**
- * set_environment_variable - unsets an evironment variable.
+ * set_environment_variable - sets an evironment variable.
  * @data: pointer to programs data.
  * Return: Zero id success or other numbers if it is declared in the arguments.
  */

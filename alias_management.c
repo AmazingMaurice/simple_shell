@@ -3,7 +3,8 @@
 /**
  * display_alias - Display aliases or a specific alias.
  * @data: Pointer to the program's data.
- * @alias_name: Name of the alias to be displayed.
+ * @alias_name: Name of the alias to be displayed. if NULL display all
+ * aliases
  * Return: Zero on success, or a non-zero number if an error occurs or if it's
  * declared in the arguments.
  */
@@ -36,13 +37,13 @@ if (!alias_name || (string_compare(data->alias_list[i], alias_name,
 	}
 	return (0);
 }
+
 /**
  * get_alias_value - Get the value of an alias.
  * @data: Pointer to the program's data structure.
  * @alias_name: Name of the requested alias.
  *
- * Return: If the alias is found, the function returns
- * a pointer to the alias value.
+ * Return: A pointer to the alias value.
  * Otherwise, it returns NULL.
  */
 char *get_alias_value(ProgramData *data, char *alias_name)
@@ -67,9 +68,6 @@ if (string_compare(alias_name, data->alias_list[i], alias_length)
  * set_alias_value - Add or override an alias.
  * @alias_string: The alias to be set in the form (name='value').
  * @data: Pointer to the program's data structure.
- * @alias_string: The string representing the alias to be added or updated.
- * @data: Pointer to the program's data structure that will store the aliases.
- *
  * Return: Zero on success, or a non-zero number if an error occurs
  * or if it's declared in the arguments.
  */

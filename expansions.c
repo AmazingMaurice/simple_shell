@@ -27,6 +27,7 @@ if (lane[p] == '#')
 		{
 			lane[p] = '\0';
 			long_to_string(getpid(), expansion, 10);
+			buffer_append(lane, expansion);
 			buffer_append(lane, data->input_line + p + 2);
 		}
 		else if (lane[p] == '$' && (lane[p + 1] == ' ' || lane[p + 1] == '\0'))
@@ -105,4 +106,3 @@ int buffer_append(char *buffer, char *str_to_add)
 	buffer[length + i] = '\0';
 	return (length + i);
 }
-

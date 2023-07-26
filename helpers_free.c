@@ -21,7 +21,7 @@ data->tokens = NULL;
 }
 
 /**
- * freeALLData - free all fields of the data
+ * freeAllData - free all fields of the data
  * @data: struct of the program's data
  * Return: Nothing
  */

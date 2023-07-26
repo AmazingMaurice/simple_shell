@@ -24,11 +24,10 @@
 
 
 #define HELP_EXIT_MSG "exit=\n"\
-"exit:\textit [STATUS]\n\n"\
+"exit:\texit [STATUS]\n\n"\
 "      Exit of the simple-shell.\n\n"\
 "      Exits the shell with a status of N. If N is omitted, the exit status\n"\
 "      is that of the last command executed.\n\n"
-
 
 
 #define HELP_ENV_MSG "env=\n"\
@@ -52,7 +51,7 @@
 #define HELP_MSG "help=\n"\
 "help:\thelp [BUILTIN_NAME]\n\n"\
 "	Display information about built_inn commands.\n\n"\
-"	Display brief summaries of built_inn commands.  IF BUILTIN_NAME is\n"\
+"	Display brief summaries of built_inn commands.  If BUILTIN_NAME is\n"\
 "	specified, gives detailed help on all commands matching BUILTIN_NAME,\n"\
 "	otherwise the list  of help topics is printed BUILTIN_NAME list.\n"\
 "	Arguments:\n\n"\

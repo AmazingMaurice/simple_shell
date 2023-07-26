@@ -16,12 +16,12 @@ for (i = 0; data->tokens[1][i]; i++)
 {
 if ((data->tokens[1][i] < '0' || data->tokens[1][i] > '9')
 		&& data->tokens[1][i] != '+')
-	{
-	errno = 2;
-	return (2);
-	}
+{
+errno = 2;
+return (2);
 }
-	errno = _atoi(data->tokens[1]);
+}
+errno = _atoi(data->tokens[1]);
 }
 freeAllData(data);
 exit(errno);
@@ -126,8 +126,8 @@ int execute_help(ProgramData *data)
 		length = string_length(data->tokens[1]);
 		if (string_compare(data->tokens[1], messages[i], length))
 		{
-			print_to_stdout(messages[i] + length + 1);
-			return (1);
+		print_to_stdout(messages[i] + length + 1);
+		return (1);
 		}
 	}
 	errno = EINVAL;

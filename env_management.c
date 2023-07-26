@@ -53,6 +53,7 @@ int set_key_in_env(char *key, char *value, ProgramData *data)
 	}
 	data->env[j] = string_concat(string_duplicate(key), "=");
 	data->env[j] = string_concat(data->env[j], value);
+
 	if (is_new_key)
 	{
 		data->env[j + 1] = NULL;
@@ -74,6 +75,7 @@ int remove_key_from_env(char *key, ProgramData *data)
 	if (key == NULL || data->env == NULL)
 		return (0);
 	keyLength = string_length(key);
+
 	for (j = 0; data->env[j]; j++)
 	{
 		if (string_compare(key, data->env[j], keyLength) &&
