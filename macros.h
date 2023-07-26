@@ -16,11 +16,11 @@
 
 #define HELP_CD_MSG "cd=\n"\
 "cd:\tcd [dir]\n\n"\
-"       change the shell working directory. \n\n"\
+"       change the shell working directory.\n\n"\
 "       If no argument given to cd the command will be interpreted\n"\
 "       as cd $HOME.\n"\
 "       if the argumenthelp is - (cd -), the command will be interpreted\n"\
-"       as cd $OLDPWD. \n\n"
+"       as cd $OLDPWD.\n\n"
 
 
 #define HELP_EXIT_MSG "exit=\n"\

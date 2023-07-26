@@ -49,7 +49,7 @@ int sign = 1;
 unsigned int number = 0;
 
 /* 1 - analysis sign */
-while (!('0' <= *s && *s <= '9') &&  *s != '0')
+while (!('0' <= *s && *s <= '9') &&  *s != '\0')
 {
 if (*s == '-')
 sign *= -1;

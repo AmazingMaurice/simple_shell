@@ -69,7 +69,7 @@ exit(127);
 }
 }
 data->tokens = NULL;
-data->env =  malloc(sizeof(char *) * 50);
+data->env = malloc(sizeof(char *) * 50);
 if (env)
 {
 for (; env[i]; i++)

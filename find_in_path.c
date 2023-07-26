@@ -65,7 +65,7 @@ int num_directories = 2;
 char **tokens = NULL;
 char *path;
 /* Get the PATH value */
-path = get_key_from_env(" PATH ", data);
+path = get_key_from_env("PATH", data);
 if ((path == NULL) || path [0] == '\0')
 { /* PATH not found */
 return (NULL);

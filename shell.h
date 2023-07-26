@@ -75,12 +75,8 @@ void handle_ctrl_c(int signal UNUSED);
 int read_line(ProgramData *data);
 
 /* split the each line for the logical operators if it exist */
-int check_logic_operators(char *commands_array[], int i,
-			char operators_array[]);
+int check_logic_operators(char *commands_array[], int i, char operators_array[]);
 
-
-
-/*======== expansions.c ========*/
 
 /* expand vars */
 void expand_vars(ProgramData *data);
